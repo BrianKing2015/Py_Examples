@@ -4,7 +4,7 @@ import os
 fileName = []
 directName = []
 # Set the directory you want to start from
-rootDir = 'C:\\Users\\briank\\Pictures'
+rootDir = 'C:\\Users\\Example_user'
 fhandle = open ('Output.csv', 'w')
 
 
@@ -14,10 +14,8 @@ def fileSearch (starts = '', ends = ''):
         # Removing the directory from printout
         # print('Found directory: %s' % dirName)
 
-        # Skipping the STAGE folder to only display 1 version
-        subdirList[:] = [d for d in subdirList if d not in ['STAGE']]
         for fname in fileList:
-            # Set the file types you are looking for use startswith for name of file and endswith for file type
+            # Set the file names you are looking for use startswith for name of file and endswith for file type
             if fname.lower().startswith((starts)) & fname.lower().endswith((ends)) :
                 print('%s' % fname)
                 # Sticking the directory name and file name into lists so they are callable later and writing to the Output.csv
@@ -27,17 +25,16 @@ def fileSearch (starts = '', ends = ''):
                  
                 
                 
-# Here an example usage of the function above. 
+# Here an simple example usage that finds files that start with cat and are in the format jpeg  
 fileSearch('cat', 'jpg')
 
 
-# Example
-# fileSearch ('ghost','vxmechanism' )
-# fileSearch ('p - ', 'vxmechanism')
-# fileSearch ('g - ', 'vxmechanism')
-# fileSearch ('l - ', 'vxmechanism')
-# fileSearch ('h - ', 'vxmechanism')
+## Examples:
+# Finds all jpegs
+# fileSearch ('','jpg' )
 
+## Finds every file named joe, regardless of file type 
+# fileSearch ('joe', '')
 
 
 
