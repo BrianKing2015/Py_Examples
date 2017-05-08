@@ -32,10 +32,10 @@ if __name__ == '__main__':
 	
 	results = parser.parse_args()
 	
-	#try:
-	logOut = sshLog(results.host, results.user, results.passwrd, results.doc, results.target)
-	for line in logOut: 
-		print (line)
+	try:
+		logOut = sshLog(results.host, results.user, results.passwrd, results.doc, results.target)
+		for line in logOut: 
+			print (line)
 
-	# except IOError:
-	# 	print ('No such file is accessible, check path and IP Address.')
+	except IOError:
+		print ('No such file is accessible, check path and IP Address.')
